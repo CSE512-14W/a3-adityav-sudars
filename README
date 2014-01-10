@@ -1,26 +1,43 @@
 Jan 8, 2014
+Sam Sudar
+sudar.sam@gmail.com
 
-I set this up as a starting point for javascript projects. The file has to be
-served, either from OS X 10.7's file sharing or presumably python's server,
-which can be run using:
+This is intended to be a starting point for javascript projects.
+
+It uses RequireJS and presents a project structure that you can then turn into
+a full-featured javascript project. (At least hopefully.) It provides d3,
+jquery, backbone, and underscore.
+
+The index.html file has to be served. This can be done with any server that you
+like. An easy one is:
 
 python -m SimpleHTTPServer 8888
 
-and it then serves things from the directory you run it in.
+This will start a web server on port 8888 on your local machine, in the www
+directory. It will be serving the contents of your working directory when you
+run the command. Navigate to 127.0.0.1:8888/app and there you go.
 
-You also have to run 
+I constructed this based on the following video, which was extremely helpful:
+http://net.tutsplus.com/tutorials/javascript-ajax/a-requirejs-backbone-and-bower-starter-template/
+
+
+Setup:
+
+It relies on the presence of several libraries in the vendor directory, which
+it assumes you'll install using bower. This can be done using:
 
 bower install
 
-to get the necessary packages in place. Make sure you do it from the right
-directory, I think the root of the www directory.
+to get the necessary packages in place. Make sure you do it in the www
+directory, which has the component.json file.
 
 If you don't have bower, install it with npm. If you don't have npm, you need
-node. Try something like the following for mac on the above date:
+node. The following commands worked on OSX with homebrew installed.
 
 brew install node
 npm install -g bower
 
-That then worked for me.
-
-bacteria.js is the file you should then be editing.
+content.js is the file you should then be editing. Start a server, navigate to
+app/index.html, and open the javascript console. If things are working, you'll
+see a log statement indicating that the onReady() function of content.js has
+been called. You can now begin editing!

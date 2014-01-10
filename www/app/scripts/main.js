@@ -4,7 +4,7 @@ require.config({
         "underscore": "vendor/underscore-amd/underscore",
         "backbone": "vendor/backbone-amd/backbone",
         "d3": "vendor/d3/d3",
-        "bacteria": "bacteria"
+        "content": "content"
     },
     shim: {
         d3: { exports: 'd3' }
@@ -12,13 +12,13 @@ require.config({
 });
 
 requirejs(['jquery',
-           'bacteria',
+           'content',
            'd3',
            'backbone',
            'underscore'
           ],
-          function($, bacteria, d3, backbone, _) {
+          function($, content, d3, backbone, _) {
               var testd3 = d3;
-              $(bacteria.onReady());
+              $(content.onReady());
           }
 );
