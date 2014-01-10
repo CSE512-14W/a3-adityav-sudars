@@ -1,0 +1,2 @@
+#!/bin/bash
+cp -r ./www /Library/WebServer/Documents/dataViz_512/assignment1
