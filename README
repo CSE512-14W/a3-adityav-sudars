@@ -1,0 +1,26 @@
+Jan 8, 2014
+
+I set this up as a starting point for javascript projects. The file has to be
+served, either from OS X 10.7's file sharing or presumably python's server,
+which can be run using:
+
+python -m SimpleHTTPServer 8888
+
+and it then serves things from the directory you run it in.
+
+You also have to run 
+
+bower install
+
+to get the necessary packages in place. Make sure you do it from the right
+directory, I think the root of the www directory.
+
+If you don't have bower, install it with npm. If you don't have npm, you need
+node. Try something like the following for mac on the above date:
+
+brew install node
+npm install -g bower
+
+That then worked for me.
+
+bacteria.js is the file you should then be editing.
