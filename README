@@ -6,7 +6,9 @@ This is intended to be a starting point for javascript projects.
 
 It uses RequireJS and presents a project structure that you can then turn into
 a full-featured javascript project. (At least hopefully.) It provides d3,
-jquery, backbone, and underscore.
+jquery, backbone, and underscore. Huge projects might be better suited by
+something like Yeoman. However, I use this project as my basis for class
+projects.
 
 The index.html file has to be served. This can be done with any server that you
 like. An easy one is:
