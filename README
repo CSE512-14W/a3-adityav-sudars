@@ -25,20 +25,6 @@ http://net.tutsplus.com/tutorials/javascript-ajax/a-requirejs-backbone-and-bower
 
 Setup:
 
-It relies on the presence of several libraries in the vendor directory, which
-it assumes you'll install using bower. This can be done using:
-
-bower install
-
-to get the necessary packages in place. Make sure you do it in the www
-directory, which has the component.json file.
-
-If you don't have bower, install it with npm. If you don't have npm, you need
-node. The following commands worked on OSX with homebrew installed.
-
-brew install node
-npm install -g bower
-
 content.js is the file you should then be editing. Start a server, navigate to
 app/index.html, and open the javascript console. If things are working, you'll
 see a log statement indicating that the onReady() function of content.js has
