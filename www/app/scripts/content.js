@@ -36,8 +36,8 @@ define(['jquery',
                 //.attr('d', path);
     //}
     
-    d3.json('data/maps/india_IN_State_Delhi.json', function(error, india) {
-        var subunits = topojson.feature(india, india.objects.places_IN_State_Delhi);
+    d3.json('data/maps/india_IN_State_Delhi_Gujarat.json', function(error, india) {
+        var subunits = topojson.feature(india, india.objects.places_IN_State_Delhi_Gujarat);
 
         // According to: http://teczno.com/squares/#4.39/22.83/79.83,
         // centering at 23 80 is ok. The above url is lat/lon. However, the
@@ -54,7 +54,7 @@ define(['jquery',
             .attr('d', path);
 
         svg.selectAll('.subunit')
-            .data(topojson.feature(india, india.objects.places_IN_State_Delhi).features)
+            .data(topojson.feature(india, india.objects.places_IN_State_Delhi_Gujarat).features)
             .enter().append('path')
             .attr('class', function(d) {
                 console.log('d.id: ' + d.id);
