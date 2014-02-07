@@ -59,9 +59,6 @@ define(['jquery',
         // Do something here
         console.log("the onReady function of content.js was called. " +
             "You're up and running!");
-        var welcome = $('<h1>');
-        welcome.text('Welcome! Let\'s get started.');
-        $('body').append(welcome);
     };
 
     return pub;
