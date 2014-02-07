@@ -1,31 +1,18 @@
-Jan 8, 2014
+Feb 6, 2014
+Aditya Vashistha
 Sam Sudar
 sudar.sam@gmail.com
 
-This is intended to be a starting point for javascript projects.
+This is assignment three for University of Washington (UW) CSE 512, Data
+Visualization.
 
-It uses RequireJS and presents a project structure that you can then turn into
-a full-featured javascript project. (At least hopefully.) It provides d3,
-jquery, backbone, and underscore. Huge projects might be better suited by
-something like Yeoman. However, I use this project as my basis for class
-projects.
+It maps calling data to an IVR system.
 
 The index.html file has to be served. This can be done with any server that you
 like. An easy one is:
 
-python -m SimpleHTTPServer 8888
+python -m SimpleHTTPServer 8000
 
-This will start a web server on port 8888 on your local machine, in the www
+This will start a web server on port 8000 on your local machine, in the www
 directory. It will be serving the contents of your working directory when you
-run the command. Navigate to 127.0.0.1:8888/app and there you go.
-
-I constructed this based on the following video, which was extremely helpful:
-http://net.tutsplus.com/tutorials/javascript-ajax/a-requirejs-backbone-and-bower-starter-template/
-
-
-Setup:
-
-content.js is the file you should then be editing. Start a server, navigate to
-app/index.html, and open the javascript console. If things are working, you'll
-see a log statement indicating that the onReady() function of content.js has
-been called. You can now begin editing!
+run the command. Navigate to 127.0.0.1:8000/app and there you go.
