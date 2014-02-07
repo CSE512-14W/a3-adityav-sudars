@@ -37,7 +37,7 @@ define(['jquery',
     //}
     
     d3.json('data/maps/india_IN_State.json', function(error, india) {
-        var subunits = topojson.feature(india, india.objects.subunits);
+        var subunits = topojson.feature(india, india.objects.places_IN_State);
 
         // According to: http://teczno.com/squares/#4.39/22.83/79.83,
         // centering at 23 80 is ok. The above url is lat/lon. However, the
