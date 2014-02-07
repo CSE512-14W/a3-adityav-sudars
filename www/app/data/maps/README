@@ -25,3 +25,10 @@ This then let me output another TopoJSON file via:
 
 topojson --id-property=woe_name -o india_IN_State_Delhi.json -p -- subunits.json places_IN_State_Delhi.json
 
+And had to manually add Gujarat, whose type was null in the dataset:
+
+ogr2ogr -f GeoJSON -where "iso_a2 = 'IN' AND (type IN ('State', 'Union Territor') OR name='Gujarat')" places_IN_State_Delhi_Gujarat.json ne_10m_admin_1_states_provinces/ne_10m_admin_1_states_provinces.shp
+
+topojson --id-property=woe_name -o india_IN_State_Delhi_Gujarat.json -p -- subunits.json places_IN_State_Delhi_Gujarat.json
+
+
