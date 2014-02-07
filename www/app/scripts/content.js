@@ -53,6 +53,15 @@ define(['jquery',
             .datum(subunits)
             .attr('d', path);
 
+        svg.selectAll('.subunit')
+            .data(topojson.feature(india, india.objects.places_IN_State).features)
+            .enter().append('path')
+            .attr('class', function(d) {
+                console.log('d.id: ' + d.id);
+                return 'state ' + d.id;
+            })
+            .attr('d', path);
+
         //svg.append('path')
             //.datum(topojson.feature(india, india.objects.subunits))
             //.attr('d', d3.geo.path().projection(d3.geo.mercator()));
