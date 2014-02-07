@@ -19,11 +19,16 @@ http://bl.ocks.org/mbostock/4060606 -->
             }
             
         </style>
-        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <link href="scripts/vendor/jquery-simple-slider/css/simple-slider.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
-        <!--<img src="img/india-map.svg" alt="India Map">-->
         <script data-main="scripts/main.js"
                 src="scripts/vendor/requirejs/require.js"></script>
+        <div id="slider-div">
+          <h2>Select a Week</h2>
+          <!--<input type="text" id="slider" data-slider="true" data-slider-snap="true" data-slider-equal-steps="true" data-slider-range="1,40">-->
+          <input type="text" data-slider="true" id="slider">
+        </div>
+        <div id="map"></div>
     </body>
 </html>

@@ -5,7 +5,8 @@ require.config({
         "backbone": "vendor/backbone-amd/backbone",
         "d3": "vendor/d3/d3",
         "content": "content",
-        "topojson": "vendor/topojson/topojson"
+        "topojson": "vendor/topojson/topojson",
+        "slider": "vendor/jquery-simple-slider/js/simple-slider"
     },
     shim: {
         d3: { exports: 'd3' }

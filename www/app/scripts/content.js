@@ -8,9 +8,10 @@
  */
 define(['jquery', 
         'd3',
-        'topojson'
+        'topojson',
+        'slider'
         ],
-        function($, d3, topojson) {
+        function($, d3, topojson, slider) {
 
     // This will be the module we return.
     var pub = {};
@@ -18,7 +19,7 @@ define(['jquery',
     var width = 1000;
     var height = 1000;
 
-    var svg = d3.select('body').append('svg')
+    var svg = d3.select('#map').append('svg')
         .attr('width', width)
         .attr('height', height);
 
@@ -48,6 +49,28 @@ define(['jquery',
                 return 'state ' + d.id;
             })
             .attr('d', path);
+
+    });
+
+    // This will load the csv.
+    d3.csv('data/WeeklyData_v2.csv', function(csv) {
+        // this will hold the time headings. In the case of weeks it should be
+        // things like "Week 1, Week 2".
+        var timeNames = [];
+        var titleRow = d3.keys(csv[0]);
+        for (var i = 1; i < titleRow.length - 1; i++) {
+            timeNames.push(titleRow[i]);
+        }
+        console.log('timeNames: ' + timeNames);
+        console.log('timeNames.length: ' + timeNames.length);
+        // We're going to make the range of the slider 1 to timeNames.length.
+        // If i is selected on the slider, that means we'll index into the
+        // timeNames array at i-1.
+
+        // Now that we have them, we'll set up the slider.
+        $('#slider').attr('data-slider-snap', 'true');
+        $('#slider').attr('data-slider-range', '1,' + timeNames.length);
+        $('#slider').attr('data-slider-step', '1');
 
     });
 
