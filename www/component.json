@@ -6,6 +6,7 @@
         "d3": null,
         "requirejs": null,
         "backbone-amd": null,
-        "underscore-amd": null
+        "underscore-amd": null,
+        "topojson": null
     }
 }
