@@ -22,20 +22,7 @@ define(['jquery',
         .attr('width', width)
         .attr('height', height);
 
-    //queue()
-        //.defer(d3.json, 'data/maps/india.json')
-        //.await(ready);
-
-    //function ready(error, india) {
-        //svg.append('g')
-                //.attr('class', 'states')
-            //.selectAll('path')
-                //.data(topojson.feature(india, india.objects.states).features)
-            //.enter().append('path')
-                //.attr('class', 'testClass')
-                //.attr('d', path);
-    //}
-    
+   
     d3.json('data/maps/india_IN_State_Delhi_Gujarat.json', function(error, india) {
         var subunits = topojson.feature(india, india.objects.places_IN_State_Delhi_Gujarat);
 
@@ -62,9 +49,6 @@ define(['jquery',
             })
             .attr('d', path);
 
-        //svg.append('path')
-            //.datum(topojson.feature(india, india.objects.subunits))
-            //.attr('d', d3.geo.path().projection(d3.geo.mercator()));
     });
 
     /**
