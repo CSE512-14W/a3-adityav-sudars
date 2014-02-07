@@ -36,7 +36,7 @@ define(['jquery',
                 //.attr('d', path);
     //}
     
-    d3.json('data/maps/india.json', function(error, india) {
+    d3.json('data/maps/india_IN_State.json', function(error, india) {
         var subunits = topojson.feature(india, india.objects.subunits);
 
         // According to: http://teczno.com/squares/#4.39/22.83/79.83,
