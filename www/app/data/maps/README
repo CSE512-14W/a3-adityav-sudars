@@ -15,3 +15,13 @@ ogr2ogr -f GeoJSON -where "iso_a2 = 'IN' AND type = 'State'" places_IN_State.jso
 --This should upgrade name to the id property, which it does.
 topojson --id-property name -o india_IN_State.json -p -- subunits.json places_IN_State.json
 
+It turns out that the 'type' property of Delhi is actually 'Union Territor'
+(sic), and that I was missing it by filtering for state. So I reran the states
+ogr2ogr command:
+
+ogr2ogr -f GeoJSON -where "iso_a2 = 'IN' AND type IN ('State', 'Union Territor')" places_IN_State_Delhi.json ne_10m_admin_1_states_provinces/ne_10m_admin_1_states_provinces.shp
+
+This then let me output another TopoJSON file via:
+
+topojson --id-property=woe_name -o india_IN_State_Delhi.json -p -- subunits.json places_IN_State_Delhi.json
+
