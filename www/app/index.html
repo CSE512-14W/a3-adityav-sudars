@@ -14,20 +14,25 @@ http://bl.ocks.org/mbostock/4060606 -->
                 fill: #dcd;
             }
 
+            .state.Delhi {
+                fill: #dce;
+            }
+
             .state {
               stroke: #fff;
             }
             
         </style>
         <link href="scripts/vendor/jquery-simple-slider/css/simple-slider.css" rel="stylesheet" type="text/css" />
+        <link href="scripts/vendor/jquery-ui/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <script data-main="scripts/main.js"
                 src="scripts/vendor/requirejs/require.js"></script>
+        <h2>Select a Week</h2>
         <div id="slider-div">
-          <h2>Select a Week</h2>
           <!--<input type="text" id="slider" data-slider="true" data-slider-snap="true" data-slider-equal-steps="true" data-slider-range="1,40">-->
-          <input type="text" data-slider="true" id="slider">
+          <!--<input type="text" id="slider" data-slider="true" data-slider-snap="true" data-slider-equal-steps="true" data-slider-range="1,10">-->
         </div>
         <div id="map"></div>
     </body>

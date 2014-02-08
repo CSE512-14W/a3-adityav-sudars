@@ -8,6 +8,7 @@
         "backbone-amd": null,
         "underscore-amd": null,
         "topojson": null,
-        "jquery-simple-slider": null
+        "jquery-simple-slider": null,
+        "jquery-ui": null
     }
 }

@@ -6,7 +6,8 @@ require.config({
         "d3": "vendor/d3/d3",
         "content": "content",
         "topojson": "vendor/topojson/topojson",
-        "slider": "vendor/jquery-simple-slider/js/simple-slider"
+        "slider": "vendor/jquery-simple-slider/js/simple-slider",
+        "ui-slider": "vendor/jquery-ui/ui/jquery-ui"
     },
     shim: {
         d3: { exports: 'd3' }
