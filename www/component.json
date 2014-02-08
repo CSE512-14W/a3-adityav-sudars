@@ -9,6 +9,7 @@
         "underscore-amd": null,
         "topojson": null,
         "jquery-simple-slider": null,
-        "jquery-ui": null
+        "jquery-ui": null,
+        "queue-async": null
     }
 }

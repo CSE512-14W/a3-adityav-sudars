@@ -7,7 +7,8 @@ require.config({
         "content": "content",
         "topojson": "vendor/topojson/topojson",
         "slider": "vendor/jquery-simple-slider/js/simple-slider",
-        "ui-slider": "vendor/jquery-ui/ui/jquery-ui"
+        "ui-slider": "vendor/jquery-ui/ui/jquery-ui",
+        "queue": "vendor/queue-async/queue"
     },
     shim: {
         d3: { exports: 'd3' }
