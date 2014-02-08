@@ -75,34 +75,25 @@ define(['jquery',
             // We're going to make the range of the slider 1 to timeNames.length.
             // If i is selected on the slider, that means we'll index into the
             // timeNames array at i-1.
-
+            // First handle the error case where there are no names. This
+            // likely would mean something hasn't parsed correctly.
+            if (timeNames.length < 1) {
+                alert('no names for time periods, big problems');
+            }
+            // And we'll set the label the first time even before a slide.
+            $('#time-label').text(timeNames[0]);
             $('#slider-div').slider({
                 range: 'min',
                 value: 1,
                 min: 1,
-                max: 11,
+                max: timeNames.length,
                 slide: function(event, ui) {
+                    $('#time-label').text(timeNames[ui.value - 1]);
                     console.log(ui.value);
                 }
             });
             $('#slider-div').slider('values', 0, 11);
-
-            // Now that we have them, we'll set up the slider.
-            //$('#slider').simpleSlider({
-                //'simple-slider-snap': 'true',
-                //'simple-slider-range': '1,10',
-                //'simple-slider-step': '1',
-                //'simple-slider-steps': 'true'
-            //});
-            //$('#slider').simpleSlider();
-            //$('#slider').bind('slider:changed', function(event, data) {
-                //console.log('slider changed to: ' + data.value);
-            //});
-            //$('#slider').attr('data-slider-snap', 'true');
-            //$('#slider').attr('data-slider-range', '1,10');
-            //$('#slider').attr('data-slider-step', '1');
-            //$('#slider').attr('data-slider-steps', 'true');
-
+            $('#slider-div').style('width', width);
 
         });
 
