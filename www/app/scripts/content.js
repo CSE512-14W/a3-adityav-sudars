@@ -159,7 +159,8 @@ define(['jquery',
                 value: 1,
                 min: 1,
                 max: timeNames.length,
-                slide: onSlide
+                slide: onSlide,
+                width: 20
             });
         }
 
