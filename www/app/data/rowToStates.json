@@ -1,8 +1,8 @@
 [
     [
-    "West Bengal",
+    "West_Bengal",
     "Sikkim",
-    "Andaman and Nicobar"
+    "Andaman_and_Nicobar"
     ],
     [
     "Delhi"
@@ -11,10 +11,10 @@
     "Assam"
     ],
     [
-    "Himachal Pradesh"
+    "Himachal_Pradesh"
     ],
     [
-    "Uttar Pradesh",
+    "Uttar_Pradesh",
     "Uttaranchal"
     ],
     [
@@ -22,7 +22,7 @@
     "Goa"
     ],
     [
-    "Madhya Pradesh",
+    "Madhya_Pradesh",
     "Chhattisgarh"
     ],
     [
@@ -33,17 +33,17 @@
     "Karnataka"
     ],
     [
-    "Andhra Pradesh"
+    "Andhra_Pradesh"
     ],
     [
     "Rajasthan"
     ],
     [
-    "Tamil Nadu",
+    "Tamil_Nadu",
     "Puducherry"
     ],
     [
-    "Jammu and Kashmir"
+    "Jammu_and_Kashmir"
     ],
     [
     "Haryana"
@@ -52,7 +52,7 @@
     "Orissa"
     ],
     [
-    "Arunachal Pradesh",
+    "Arunachal_Pradesh",
     "Meghalaya",
     "Mizoram",
     "Nagaland",
@@ -60,7 +60,7 @@
     "Tripura"
     ],
     [
-    "Not defined"
+    "Not_defined"
     ],
     [
     "Bihar",
@@ -68,7 +68,7 @@
     ],
     [
     "Gujarat",
-    "Dadra and Nagar Haveli"
+    "Dadra_and_Nagar_Haveli"
     ],
     [
     "Kerala"

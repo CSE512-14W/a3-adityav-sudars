@@ -127,8 +127,10 @@ define(['jquery',
                         .features)
                 .enter().append('path')
                 .attr('class', function(d) {
-                    console.log('d.id: ' + d.id);
-                    return 'state ' + d.id;
+                    // We need to replace all the spaces with underscores so
+                    // that we can use selectors to get them.
+                    console.log('d.id: ' + d.id.replace(/ /g, '_'));
+                    return d.id.replace(/ /g, '_');
                 })
                 .attr('d', path);
 
