@@ -34,7 +34,7 @@ define(['jquery',
             .attr('height', height);
 
         // These are the quantiles Aditya set up to use.
-        var domain = [29, 145, 322, 472, 977, 2259];
+         var domain = [29, 145, 322, 472, 977, 2259, 8861];
         // These are the colors we're going to set to fill values, a la:
         // http://bl.ocks.org/mbostock/4060606
         var range = [
