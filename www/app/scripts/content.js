@@ -33,6 +33,9 @@ define(['jquery',
             .attr('height', height);
 
        
+        // This will map the state ids to the actual state object.
+        var states = {};
+
         d3.json('data/maps/india_IN_State_Delhi_Gujarat.json', function(error, india) {
             var subunits = topojson.feature(india, india.objects.places_IN_State_Delhi_Gujarat);
 
@@ -96,6 +99,9 @@ define(['jquery',
             $('#slider-div').style('width', width);
 
         });
+        
+        console.log('returning pub');
+        d3.select('svg').select('#Rajasthan').style('fill', '#dce');
 
     };
 
