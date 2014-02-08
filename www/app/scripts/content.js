@@ -33,17 +33,25 @@ define(['jquery',
             .attr('width', width)
             .attr('height', height);
 
+        // These are the things we're going to set to fill values, a la:
+        // http://bl.ocks.org/mbostock/4060606
+        var colors = [
+          'rgb(247,251,255)',
+          'rgb(222,235,247)',
+          'rgb(198,219,239)',
+          'rgb(158,202,225)',
+          'rgb(107,174,214)',
+          'rgb(66,146,198)',
+          'rgb(33,113,181)'
+        ];
+
+        // These are the quantiles Aditya set up to use.
+        var domain = [29, 145, 322, 472, 977, 2259];
+        var range = [0, 1, 2, 3, 4, 5, 6];
+        var colorScale = d3.scale.threshold()
+            .domain(domain)
+            .range(range);
        
-        // We need to do two ajax calls--one to get the csv and one to get the
-        // TopoJSON. To do this we're going to use queue. It is YET ANOTHER
-        // mbostock library that appears to be nice and easy.
-        queue()
-            .defer(d3.json, 'data/maps/india_IN_State_Delhi_Gujarat.json')
-            .defer(d3.csv, 'data/WeeklyData_v2.csv')
-            .await(function(error, topoJson, csv) {
-                doViz(topoJson, csv);
-            });
-        
         // This is the function that actually performs the visualization. It
         // expects to get the loaded TopoJSON of the states as well as the 
         // csv with the time series.
@@ -52,13 +60,40 @@ define(['jquery',
             setUpSlider(csv);
         }
 
-        // This will map the state ids to the actual state object.
-        var states = {};
-        // this will hold the time headings. In the case of weeks it should be
+        // This will hold the time headings. In the case of weeks it should be
         // things like "Week 1, Week 2".
         var timeNames = [];
 
-        function drawMap(india) {
+        // We also need to construct up a basic way to store the csv data.
+        // This will be an array of arrays. Its length will be the number of
+        // time periods we have (ie the number of columns in the csv -1, since
+        // we don't have data in the first column, which is state names.)
+        // Each element will be an array of length for each region (ie the
+        // total number of rows -1, since we aren't counting the column
+        // headings).
+        var csvData = [];
+
+        // And we also need a way to map each row in the csv to the states that
+        // it represents. This is hardcoded for now, because we need to map
+        // the state names in the csv to those in the svg we built from
+        // naturalearth data. 
+        // Row 2 of the csv is the first place that states occur (+1 for the
+        // column heads and +1 for 1-based index). So.
+        var states = [];
+
+        // We need to do two ajax calls--one to get the csv and one to get the
+        // TopoJSON. To do this we're going to use queue. It is YET ANOTHER
+        // mbostock library that appears to be nice and easy.
+        queue()
+            .defer(d3.json, 'data/maps/india_IN_State_Delhi_Gujarat.json')
+            .defer(d3.csv, 'data/WeeklyData_v2.csv')
+            .defer(d3.json, 'data/rowToStates.json')
+            .await(function(error, topoJson, csv, rowToStates) {
+                states = rowToStates;
+                doViz(topoJson, csv);
+            });
+
+         function drawMap(india) {
             var subunits = topojson.feature(
                     india,
                     india.objects.places_IN_State_Delhi_Gujarat);
@@ -121,12 +156,12 @@ define(['jquery',
 
         function onSlide(event, ui) {
             $('#time-label').text(timeNames[ui.value - 1]);
-            console.log(ui.value);
+            console.log('slider slid to: ' + ui.value);
+            // We need to get all the 
 
         }
         
         console.log('returning pub');
-        d3.select('svg').select('#Rajasthan').style('fill', '#dce');
 
     };
 
