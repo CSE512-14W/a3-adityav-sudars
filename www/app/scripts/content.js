@@ -33,9 +33,11 @@ define(['jquery',
             .attr('width', width)
             .attr('height', height);
 
-        // These are the things we're going to set to fill values, a la:
+        // These are the quantiles Aditya set up to use.
+        var domain = [29, 145, 322, 472, 977, 2259];
+        // These are the colors we're going to set to fill values, a la:
         // http://bl.ocks.org/mbostock/4060606
-        var colors = [
+        var range = [
           'rgb(247,251,255)',
           'rgb(222,235,247)',
           'rgb(198,219,239)',
@@ -44,10 +46,6 @@ define(['jquery',
           'rgb(66,146,198)',
           'rgb(33,113,181)'
         ];
-
-        // These are the quantiles Aditya set up to use.
-        var domain = [29, 145, 322, 472, 977, 2259];
-        var range = [0, 1, 2, 3, 4, 5, 6];
         var colorScale = d3.scale.threshold()
             .domain(domain)
             .range(range);
@@ -56,6 +54,7 @@ define(['jquery',
         // expects to get the loaded TopoJSON of the states as well as the 
         // csv with the time series.
         function doViz(topoJson, csv) {
+            setData(csv);
             drawMap(topoJson);
             setUpSlider(csv);
         }
@@ -92,6 +91,13 @@ define(['jquery',
                 states = rowToStates;
                 doViz(topoJson, csv);
             });
+
+        // This function will put our csv data into the data expected by 
+        // csvData. Namely, this will remove the first row and first column.
+        function setData(csv) {
+            console.log('csv.length:' + csv.length);    
+            csvData = csv;
+        }
 
          function drawMap(india) {
             var subunits = topojson.feature(
@@ -151,13 +157,27 @@ define(['jquery',
                 max: timeNames.length,
                 slide: onSlide
             });
-
         }
 
         function onSlide(event, ui) {
-            $('#time-label').text(timeNames[ui.value - 1]);
+            var weekHeading = timeNames[ui.value - 1];
+            $('#time-label').text(weekHeading);
             console.log('slider slid to: ' + ui.value);
-            // We need to get all the 
+            // We need to iterate over every row in the csv.
+            for (var row = 0; row < csvData.length; row++) {
+                var value = csvData[row][weekHeading];
+                var color = colorScale(value);
+                // And now we need to set the fill for each state in this
+                // row to the correct fill.
+                for (var state = 0; state < states[row].length; state++) {
+                    var stateName = states[row][state];
+                    if (stateName !== 'Not defined') {
+                        d3.select('svg').select('.' + stateName)
+                            .style('fill', color);
+                    }
+                }
+            }
+             
 
         }
         
