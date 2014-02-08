@@ -38,13 +38,13 @@ define(['jquery',
         // These are the colors we're going to set to fill values, a la:
         // http://bl.ocks.org/mbostock/4060606
         var range = [
-          'rgb(247,251,255)',
-          'rgb(222,235,247)',
-          'rgb(198,219,239)',
-          'rgb(158,202,225)',
-          'rgb(107,174,214)',
-          'rgb(66,146,198)',
-          'rgb(33,113,181)'
+            'rgb(198,219,239)',
+            'rgb(158,202,225)',
+            'rgb(107,174,214)',
+            'rgb(66,146,198)',
+            'rgb(33,113,181)',
+            'rgb(8,81,156)',
+            'rgb(8,48,107)'
         ];
         var colorScale = d3.scale.threshold()
             .domain(domain)
@@ -57,6 +57,8 @@ define(['jquery',
             setData(csv);
             drawMap(topoJson);
             setUpSlider(csv);
+            // Color the map the first time.
+            colorMap(1);
         }
 
         // This will hold the time headings. In the case of weeks it should be
@@ -160,9 +162,13 @@ define(['jquery',
         }
 
         function onSlide(event, ui) {
-            var weekHeading = timeNames[ui.value - 1];
+            colorMap(ui.value);
+        }
+
+        function colorMap(timeIndex) {
+            var weekHeading = timeNames[timeIndex - 1];
             $('#time-label').text(weekHeading);
-            console.log('slider slid to: ' + ui.value);
+            console.log('slider slid to: ' + timeIndex);
             // We need to iterate over every row in the csv.
             for (var row = 0; row < csvData.length; row++) {
                 var value = csvData[row][weekHeading];
@@ -177,7 +183,6 @@ define(['jquery',
                     }
                 }
             }
-             
 
         }
         
