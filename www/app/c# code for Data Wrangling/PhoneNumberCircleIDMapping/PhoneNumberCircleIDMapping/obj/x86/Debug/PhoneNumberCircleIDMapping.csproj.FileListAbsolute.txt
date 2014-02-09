@@ -1,9 +1,0 @@
-c:\users\t-avash\documents\visual studio 2010\Projects\PhoneNumberCircleIDMapping\PhoneNumberCircleIDMapping\bin\Debug\PhoneNumberCircleIDMapping.exe
-c:\users\t-avash\documents\visual studio 2010\Projects\PhoneNumberCircleIDMapping\PhoneNumberCircleIDMapping\bin\Debug\PhoneNumberCircleIDMapping.pdb
-c:\users\t-avash\documents\visual studio 2010\Projects\PhoneNumberCircleIDMapping\PhoneNumberCircleIDMapping\obj\x86\Debug\ResolveAssemblyReference.cache
-c:\users\t-avash\documents\visual studio 2010\Projects\PhoneNumberCircleIDMapping\PhoneNumberCircleIDMapping\obj\x86\Debug\PhoneNumberCircleIDMapping.exe
-c:\users\t-avash\documents\visual studio 2010\Projects\PhoneNumberCircleIDMapping\PhoneNumberCircleIDMapping\obj\x86\Debug\PhoneNumberCircleIDMapping.pdb
-C:\Users\Aditya\Documents\Visual Studio 2012\Projects\PhoneNumberCircleIDMapping\PhoneNumberCircleIDMapping\bin\Debug\PhoneNumberCircleIDMapping.exe
-C:\Users\Aditya\Documents\Visual Studio 2012\Projects\PhoneNumberCircleIDMapping\PhoneNumberCircleIDMapping\bin\Debug\PhoneNumberCircleIDMapping.pdb
-C:\Users\Aditya\Documents\Visual Studio 2012\Projects\PhoneNumberCircleIDMapping\PhoneNumberCircleIDMapping\obj\x86\Debug\PhoneNumberCircleIDMapping.exe
-C:\Users\Aditya\Documents\Visual Studio 2012\Projects\PhoneNumberCircleIDMapping\PhoneNumberCircleIDMapping\obj\x86\Debug\PhoneNumberCircleIDMapping.pdb
