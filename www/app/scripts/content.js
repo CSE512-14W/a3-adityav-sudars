@@ -66,6 +66,8 @@ define(['jquery',
                 // csv with the time series.
                 function doViz(topoJson, csv) {
                     setData(csv);
+                    drawUndefinedRegion();
+
                     drawMap(topoJson);
                     setUpSlider(csv);
                     // Color the map the first time.
@@ -154,9 +156,9 @@ define(['jquery',
                            .attr('x', textX)
                            .attr('y', textYPos)
                            .attr('font-size', 17)
-                           .attr('font-weight','bold')
+                           .attr('font-weight', 'bold')
                            .text('Total Calls');
-                           
+
                     textYPos += h + padding;
 
                     quantileLabels.reverse().forEach(function (d) {
@@ -173,6 +175,36 @@ define(['jquery',
                     range.reverse();
                     quantileLabels.reverse();
                 }
+
+                /**
+                 * Draws the square representing the undefined region corresponding to the calls. This must be called
+                 * AFTER the svg is appended.
+                */
+                function drawUndefinedRegion() {
+                    d3.select('svg').append('circle')
+                            .attr('cx', 550)
+                            .attr('cy', 200)
+                            .attr('r', 50);
+//                            .style('fill', 'rgb(8,81,156)');
+                  
+                    d3.select('svg').append('text')
+                           .attr('x', 510)
+                           .attr('y', 200)
+                           .attr('font-size', 17)
+                           .attr('font-weight', 'bold')
+                           .text('Undefined')
+                           .style('fill', 'rgb(255,255, 255)');
+
+                    d3.select('svg').append('text')
+                           .attr('x', 520)
+                           .attr('y', 220)
+                           .attr('font-size', 17)
+                           .attr('font-weight', 'bold')
+                           .text('Region')
+                           .style('fill', 'rgb(255,255, 255)');
+
+                }
+
 
                 function drawMap(india) {
                     var subunits = topojson.feature(
@@ -253,8 +285,12 @@ define(['jquery',
                         // row to the correct fill.
                         for (var state = 0; state < states[row].length; state++) {
                             var stateName = states[row][state];
-                            if (stateName !== 'Not defined') {
+                            if (stateName !== 'Not_defined') {
                                 d3.select('svg').select('.' + stateName)
+                                    .style('fill', color);
+                            }
+                            else {
+                                d3.select('svg').select('circle')
                                     .style('fill', color);
                             }
                         }
