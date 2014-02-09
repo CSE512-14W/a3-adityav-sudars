@@ -153,15 +153,18 @@ define(['jquery',
                     d3.select('svg').append('text')
                            .attr('x', textX)
                            .attr('y', textYPos)
-                           .attr('font-size', 20)
+                           .attr('font-size', 17)
+                           .attr('font-weight','bold')
                            .text('Total Calls');
+                           
                     textYPos += h + padding;
 
                     quantileLabels.reverse().forEach(function (d) {
                         d3.select('svg').append('text')
                             .attr('x', textX)
                             .attr('y', textYPos)
-                            .attr('font-size', 20)
+                            .attr('font-size', 17)
+                            .attr('font-weight', 'bold')
                             .text(d);
                         textYPos += h + padding;
                     });
