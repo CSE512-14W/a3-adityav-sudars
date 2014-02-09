@@ -49,6 +49,16 @@ define(['jquery',
         var colorScale = d3.scale.threshold()
             .domain(domain)
             .range(range);
+
+        var quantileLabels = [
+            '< 29',
+            '< 145',
+            '< 322',
+            '< 472',
+            '< 977',
+            '< 2259',
+            '< 8861'
+        ];
        
         // This is the function that actually performs the visualization. It
         // expects to get the loaded TopoJSON of the states as well as the 
@@ -59,6 +69,7 @@ define(['jquery',
             setUpSlider(csv);
             // Color the map the first time.
             colorMap(1);
+            drawScale();
         }
 
         // This will hold the time headings. In the case of weeks it should be
@@ -99,6 +110,44 @@ define(['jquery',
         function setData(csv) {
             console.log('csv.length:' + csv.length);    
             csvData = csv;
+        }
+
+        /**
+         * Draws the color scale explaining the quantiles. This must be called
+         * AFTER the svg is appended.
+         */
+        function drawScale() {
+            var h = 50;  // the height/width of the box
+            var startX = 80;
+            var startY = 200;
+            var padding = 5;
+            var yPos = startY;  // the y pos of the box. will be incremented
+            // Reverse because we want the darkest value on top.
+            range.reverse().forEach(function(d) {
+                d3.select('svg').append('rect')
+                    .attr('x', startX)
+                    .attr('y', yPos)
+                    .attr('height', h)
+                    .attr('width', h)
+                    .style('fill', d);
+                // And now increment the startY so that we don't overlap the
+                // scales.
+                yPos += h + padding;
+            });
+            // Also add text labels.
+            var textX = 10;
+            var textYPos = 229;
+            quantileLabels.reverse().forEach(function(d) {
+                d3.select('svg').append('text')
+                    .attr('x', textX)
+                    .attr('y', textYPos)
+                    .attr('font-size', 20)
+                    .text(d);
+                textYPos += h + padding;
+            });
+            // reverse() reverses in-place, so un-reverse here, just because.
+            range.reverse();
+            quantileLabels.reverse();
         }
 
          function drawMap(india) {
