@@ -17,11 +17,11 @@ In the visualization, total number of calls from each state is divided in seven 
 
 ## Running Instructions
 
-* Access our visualization at http://http://adityavash.github.io/ 
+* Access our visualization at http://adityavash.github.io/ 
 * You can also download this repository and run `python -m SimpleHTTPServer 9000` and access this from http://localhost:9000/
 
 One line description: The visualization depicts the participation growth of a voice based social media platform deployed in India for 12 weeks. 
-Link: http://http://adityavash.github.io/ 
+Link: http://adityavash.github.io/ 
 
 ##Data Domain
 ###Dataset
