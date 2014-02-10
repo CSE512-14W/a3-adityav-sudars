@@ -153,14 +153,14 @@ We implemented a time slider. The values on our visualization changes as the tim
 We tried using various scales (quartiles, quintiles, sextiles, 7 quantiles, 9 quantiles, log scale, manually chosen random progression, arithmetic progression, standard deviation calculation, and geometric progression). We tested each scale described above against the data for 3rd week, 6th week and 9th week. For our dataset, we found 7 quantiles and geometric progression to be most effective as we could see data variation in the visualization much better than other scales. For more details, please refer to color.xlsx in www/app/data in the GitHub repository.
 
 ##Work Division
-Both Aditya and Sam contributed in each phase of the project in different capacities.  Aditya took the lead in data collection, data wrangling, coloring and documentation while Sam leaded the D3 map creation and interaction technique implementation. Both Sam and Aditya equally contributed in storyboarding and design discussions.  
-We collectively spent around 70 man-hours on this assignment. The estimated breakup for individual unit is given below. 
+Both Aditya and Sam contributed in each phase of the project in different capacities.  Aditya took the lead in data collection, data wrangling, coloring and documentation while Sam leaded map creation and interaction technique implementation. Both Sam and Aditya equally contributed in storyboarding and design discussions.  
+We collectively spent around 70 man-hours on this assignment. The estimated breakup for individual units is given below.
 * Data Domain Selection – 1 man-hours
-* Exploratory Data Analysis– 6 man-hours
-* Story Boarding and Design Discussions – 6 man-hours
+* Exploratory Data Analysis– 7 man-hours
+* Story Boarding and Design Discussions – 7 man-hours
 * D3 Learning – 20 man-hours
 * Implementation – 30 man-hours 
-* Documentation – 4 man-hours
+* Documentation – 6 man-hours
 
 ##Future Work
 One interesting visualization would be to see patterns in likes and dislikes among people in same state and people across different state. It would be interesting to understand whether people in state X have preference for the content recorded by people in state Y. In future work, we would also implement more interaction techniques like brushing, selection, filtering etc.
