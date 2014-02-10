@@ -16,8 +16,12 @@ In this visualization, we show the participation growth of a voice based social 
 In the visualization, total number of calls from each state is divided in seven quantiles. Each quantile has a shade of blue with higher numbers represented with darker shades. For each week, the states are colored on the basis of the quantile to which the cumulative number of calls for that state belong. A viewer can adjust the time slider to understand the total participation across states over a period of 11 weeks. 
 
 ## Running Instructions
-Download this repository and run `python -m SimpleHTTPServer 9000` and access this from http://localhost:9000/.
 
+* Access our visualization at http://http://adityavash.github.io/ 
+* You can also download this repository and run `python -m SimpleHTTPServer 9000` and access this from http://localhost:9000/.
+
+One line description: The visualization depicts the participation growth of a voice based social media platform deployed in India for 12 weeks. 
+Link: http://http://adityavash.github.io/ 
 
 ##Data Domain
 ###Dataset
