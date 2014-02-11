@@ -122,7 +122,7 @@ Finally, we converged on using a choropleth map with a slider to see the partici
 
 
 ###Changes between storyboard and final implementation
-We were able to implement the final design. 
+We were able to implement the final design. In addition to planned features, we also implemented tooltip on mousehover which shows the total calls received from a state at a give point in time. `
 
 ##Implementation Details
 
@@ -147,13 +147,13 @@ We have used and implement following libraries
 * jquery-ui
 
 ###Interaction Technique
-We implemented a time slider. The values on our visualization changes as the time slider’s position is changed. 
+We implemented a time slider as well as tooltip. The values on our visualization changes as the time slider’s position is changed. 
 
 ###Color Gradient Scale
 We tried using various scales (quartiles, quintiles, sextiles, 7 quantiles, 9 quantiles, log scale, manually chosen random progression, arithmetic progression, standard deviation calculation, and geometric progression). We tested each scale described above against the data for 3rd week, 6th week and 9th week. For our dataset, we found 7 quantiles and geometric progression to be most effective as we could see data variation in the visualization much better than other scales. For more details, please refer to color.xlsx in www/app/data in the GitHub repository.
 
 ##Work Division
-Both Aditya and Sam contributed in each phase of the project in different capacities.  Aditya took the lead in data collection, data wrangling, coloring and documentation while Sam leaded map creation and interaction technique implementation. Both Sam and Aditya equally contributed in storyboarding and design discussions.  
+Both Aditya and Sam contributed in each phase of the project in different capacities.  Aditya took the lead in data collection, data wrangling, coloring and documentation while Sam leaded map creation and interaction technique implementation. Both Sam and Aditya equally contributed in mousehover-tool tip feature, storyboarding and design discussions.  
 We collectively spent around 70 man-hours on this assignment. The estimated breakup for individual units is given below.
 * Data Domain Selection – 1 man-hours
 * Exploratory Data Analysis– 7 man-hours
