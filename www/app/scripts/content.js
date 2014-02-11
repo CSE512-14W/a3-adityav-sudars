@@ -189,26 +189,26 @@ define(['jquery',
                     d3.select('svg').append('circle')
                             .attr('cx', 550)
                             .attr('cy', 200)
-                            .attr('r', 50)
-                            .on("mouseover", function () {
-                                        d3.select(this).transition().duration(300).style("opacity", 1);
-                                        div.transition().duration(300)
-                                        .style("opacity", 1)
-                                        div.text(function() {
-                                            var val = getValueForState('Not defined');
-                                            console.log('val for Undefined Region is: ' + val);
-                                            return 'Undefined Region:\n' + val;
-                                        })
-                                        .style("left", (d3.event.pageX) + "px")
-                                        .style("top", (d3.event.pageY - 30) + "px");
-                                    })
-                                  .on("mouseout", function () {
-                                      d3.select(this)
-                                      .transition().duration(300)
-                                      .style("opacity", 1);
-                                      div.transition().duration(300)
-                                      .style("opacity", 0);
-                                  });
+                            .attr('r', 50);
+                            //.on("mouseover", function () {
+                                        //d3.select(this).transition().duration(300).style("opacity", 1);
+                                        //div.transition().duration(300)
+                                        //.style("opacity", 1)
+                                        //div.text(function() {
+                                            //var val = getValueForState('Not defined');
+                                            //console.log('val for Undefined Region is: ' + val);
+                                            //return 'Undefined Region:\n' + val;
+                                        //})
+                                        //.style("left", (d3.event.pageX) + "px")
+                                        //.style("top", (d3.event.pageY - 30) + "px");
+                                    //})
+                                  //.on("mouseout", function () {
+                                      //d3.select(this)
+                                      //.transition().duration(300)
+                                      //.style("opacity", 1);
+                                      //div.transition().duration(300)
+                                      //.style("opacity", 0);
+                                  //});
 
                     d3.select('svg').append('text')
                            .attr('x', 510)
@@ -353,7 +353,10 @@ define(['jquery',
                                         d3.select(this).transition().duration(300).style("opacity", 1);
                                         div.transition().duration(300)
                                         .style("opacity", 1)
-                                        div.text('value')
+                                        div.text(function() {
+                                            var val = getValueForState('Not defined');
+                                            return 'Undefined Region:\n' + val;
+                                        })
                                         .style("left", (d3.event.pageX) + "px")
                                         .style("top", (d3.event.pageY - 30) + "px");
                                                                     })
